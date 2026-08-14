@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c7ruudvy6yjjk"]
+
+[ext_resource type="Texture2D" uid="uid://b0vuyqpi7v3pv" path="res://asset/ia.png" id="1_jpq3y"]
+[ext_resource type="PackedScene" uid="uid://bht5cuj77mjoc" path="res://meu_perso.tscn" id="2_845cd"]
+
+[node name="Test" type="Node2D" unique_id=269709122]
+
+[node name="Ia" type="Sprite2D" parent="." unique_id=531528545]
+position = Vector2(573.00006, 322.99997)
+scale = Vector2(1.9038143, 2.211604)
+texture = ExtResource("1_jpq3y")
+
+[node name="Area2D" parent="." unique_id=1208996926 instance=ExtResource("2_845cd")]
