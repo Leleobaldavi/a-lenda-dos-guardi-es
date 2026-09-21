@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bht5cuj77mjoc"]
 
-[ext_resource type="Script" uid="uid://dh6v28tqu8ux6" path="res://area_2d.gd" id="1_c154a"]
+[ext_resource type="Script" uid="uid://bn0snv2nfwj57" path="res://meu_perso.gd" id="1_c154a"]
 [ext_resource type="Texture2D" uid="uid://bmqchdkn7tqeg" path="res://asset/FREE_Adventurer 2D Pixel Art/Sprites/RUN/run_down.png" id="2_w1bfg"]
 [ext_resource type="Texture2D" uid="uid://bxsn6megw81o3" path="res://asset/FREE_Adventurer 2D Pixel Art/Sprites/RUN/run_up.png" id="3_iiliq"]
 [ext_resource type="Texture2D" uid="uid://bg7y0yowlykd8" path="res://asset/FREE_Adventurer 2D Pixel Art/Sprites/RUN/run_right.png" id="4_nr3qc"]
@@ -502,19 +502,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewu6j"]
-size = Vector2(61, 137)
+size = Vector2(61.111115, 137.22223)
 
-[node name="Area2D" type="Area2D" unique_id=1208996926]
-scale = Vector2(0.9, 0.9)
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=116009961]
+platform_wall_layers = 3
 script = ExtResource("1_c154a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1409049042]
-scale = Vector2(4, 4)
+scale = Vector2(3.6, 3.6)
 sprite_frames = SubResource("SpriteFrames_olhr4")
 animation = &"Parado_esquerda"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1795058338]
-position = Vector2(0.5, 3.5)
+position = Vector2(0.50000066, 3.2499995)
+scale = Vector2(0.9, 0.9)
 shape = SubResource("RectangleShape2D_ewu6j")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1735290002]
+scale = Vector2(0.9, 0.9)
