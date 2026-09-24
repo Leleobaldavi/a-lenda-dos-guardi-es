@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://wm5j51onhtx4" path="res://asset/FREE_Adventurer 2D Pixel Art/Sprites/IDLE/idle_right.png" id="8_sxjvb"]
 [ext_resource type="Texture2D" uid="uid://dqvf3n7bqis4g" path="res://asset/FREE_Adventurer 2D Pixel Art/Sprites/IDLE/idle_left.png" id="9_o2jiy"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjaex"]
+size = Vector2(53, 53)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_nf6fh"]
 atlas = ExtResource("2_w1bfg")
 region = Rect2(0, 0, 96, 80)
@@ -293,7 +296,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0433v")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Correr_baixo",
 "speed": 10.0
 }, {
@@ -322,7 +325,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ndsvh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Correr_cima",
 "speed": 10.0
 }, {
@@ -351,7 +354,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eetne")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Correr_direita",
 "speed": 10.0
 }, {
@@ -380,7 +383,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_73vfn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Correr_esquerda",
 "speed": 10.0
 }, {
@@ -409,7 +412,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o4o1j")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Parado_baixo",
 "speed": 10.0
 }, {
@@ -438,7 +441,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_omje0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Parado_cima",
 "speed": 10.0
 }, {
@@ -467,7 +470,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w04cm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Parado_direita",
 "speed": 10.0
 }, {
@@ -496,27 +499,33 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jy2xe")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Parado_esquerda",
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewu6j"]
-size = Vector2(61.111115, 137.22223)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bnrg"]
+size = Vector2(53, 123)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=116009961]
-platform_wall_layers = 3
+[node name="Prota" type="CharacterBody2D" unique_id=116009961]
 script = ExtResource("1_c154a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=965747838]
+position = Vector2(1.5, 38.5)
+shape = SubResource("RectangleShape2D_xjaex")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1409049042]
 scale = Vector2(3.6, 3.6)
 sprite_frames = SubResource("SpriteFrames_olhr4")
 animation = &"Parado_esquerda"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1795058338]
-position = Vector2(0.50000066, 3.2499995)
-scale = Vector2(0.9, 0.9)
-shape = SubResource("RectangleShape2D_ewu6j")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1735290002]
 scale = Vector2(0.9, 0.9)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1878794481]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=812648934]
+position = Vector2(1.5, 3.5)
+shape = SubResource("RectangleShape2D_6bnrg")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

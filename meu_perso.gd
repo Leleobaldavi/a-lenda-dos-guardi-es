@@ -4,6 +4,7 @@ var SPEED = 15
 var screensize = Vector2(1920, 1080)
 var moviment = "Correr_baixo"
 
+var vida = 10
 
 #Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,3 +38,13 @@ func _physics_process(delta: float) -> void:
 		if $AnimatedSprite2D.animation != moviment:
 			$AnimatedSprite2D.animation = moviment
 		$AnimatedSprite2D.play()
+
+	move_and_slide()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Ataque_Inimigo"):
+		vida -=1
+		
+		if vida == 0:
+			pass # Cena game over

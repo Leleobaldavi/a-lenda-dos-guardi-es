@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="A lenda dos guardiões"
-run/main_scene="res://meu_perso.tscn"
-config/features=PackedStringArray("4.6", "Forward Plus")
+run/main_scene="uid://c7ruudvy6yjjk"
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
