@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dqvf3n7bqis4g" path="res://asset/FREE_Adventurer 2D Pixel Art/Sprites/IDLE/idle_left.png" id="9_o2jiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjaex"]
-size = Vector2(53, 53)
+size = Vector2(47, 53)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nf6fh"]
 atlas = ExtResource("2_w1bfg")
@@ -505,7 +505,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bnrg"]
-size = Vector2(53, 123)
+size = Vector2(47, 123)
 
 [node name="Prota" type="CharacterBody2D" unique_id=116009961]
 script = ExtResource("1_c154a")
@@ -521,6 +521,10 @@ animation = &"Parado_esquerda"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1735290002]
 scale = Vector2(0.9, 0.9)
+limit_left = 0
+limit_top = 0
+limit_right = 4606
+limit_bottom = 2624
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1878794481]
 
